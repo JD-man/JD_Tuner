@@ -52,3 +52,17 @@ xcuserdata/
 **/xcshareddata/WorkspaceSettings.xcsettings
 
 # End of https://www.toptal.com/developers/gitignore/api/xcode,macos
+
+## --- JUCE 관련 ---
+# Projucer가 생성하는 설정 파일들 (공통 주소면 제외 가능)
+JuceLibraryCode/ 
+
+# Projucer 백업
+*.jucer.backup
+
+# 특정 로컬 경로가 포함될 수 있는 파일들
+*.nib
+
+## --- 프로젝트 종속성 ---
+# JUCE 모듈 자체를 프로젝트 내부에 복사했다면 아래 폴더를 제외하세요.
+JUCE/modules/
