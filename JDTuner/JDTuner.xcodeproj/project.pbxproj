@@ -27,6 +27,7 @@
 		EF1AABF72F349EDF004ECA1C /* JDTuner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JDTuner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1AAC042F349EE1004ECA1C /* JDTunerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JDTunerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1AAC0E2F349EE1004ECA1C /* JDTunerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JDTunerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF56414C2F35FFA700EF85FE /* JDTunerEngine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JDTunerEngine.xcodeproj; path = ../JDTunerEngine/Builds/iOS/JDTunerEngine.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -79,6 +80,7 @@
 				EF1AAC072F349EE1004ECA1C /* JDTunerTests */,
 				EF1AAC112F349EE1004ECA1C /* JDTunerUITests */,
 				EF1AABF82F349EDF004ECA1C /* Products */,
+				EF56414C2F35FFA700EF85FE /* JDTunerEngine.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +90,13 @@
 				EF1AABF72F349EDF004ECA1C /* JDTuner.app */,
 				EF1AAC042F349EE1004ECA1C /* JDTunerTests.xctest */,
 				EF1AAC0E2F349EE1004ECA1C /* JDTunerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF56414F2F35FFA700EF85FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -198,6 +207,12 @@
 			preferredProjectObjectVersion = 77;
 			productRefGroup = EF1AABF82F349EDF004ECA1C /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = EF56414F2F35FFA700EF85FE /* Products */;
+					ProjectRef = EF56414C2F35FFA700EF85FE /* JDTunerEngine.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				EF1AABF62F349EDF004ECA1C /* JDTuner */,
