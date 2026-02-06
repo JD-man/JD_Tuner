@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EF5641572F35FFD200EF85FE /* libJDTunerEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5641532F35FFA800EF85FE /* libJDTunerEngine.a */; };
+		EF56415F2F3600D500EF85FE /* libJDTunerEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF56415C2F36009200EF85FE /* libJDTunerEngine.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,14 +25,14 @@
 			remoteGlobalIDString = EF1AABF62F349EDF004ECA1C;
 			remoteInfo = JDTuner;
 		};
-		EF5641522F35FFA800EF85FE /* PBXContainerItemProxy */ = {
+		EF56415B2F36009200EF85FE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EF56414C2F35FFA700EF85FE /* JDTunerEngine.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 05EF760312A3C583D4C50C48;
 			remoteInfo = "JDTunerEngine - Static Library";
 		};
-		EF5641542F35FFCC00EF85FE /* PBXContainerItemProxy */ = {
+		EF56415D2F3600CF00EF85FE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EF56414C2F35FFA700EF85FE /* JDTunerEngine.xcodeproj */;
 			proxyType = 1;
@@ -71,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF5641572F35FFD200EF85FE /* libJDTunerEngine.a in Frameworks */,
+				EF56415F2F3600D500EF85FE /* libJDTunerEngine.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,11 +95,11 @@
 		EF1AABEE2F349EDF004ECA1C = {
 			isa = PBXGroup;
 			children = (
+				EF56414C2F35FFA700EF85FE /* JDTunerEngine.xcodeproj */,
 				EF1AABF92F349EDF004ECA1C /* JDTuner */,
 				EF1AAC072F349EE1004ECA1C /* JDTunerTests */,
 				EF1AAC112F349EE1004ECA1C /* JDTunerUITests */,
 				EF1AABF82F349EDF004ECA1C /* Products */,
-				EF56414C2F35FFA700EF85FE /* JDTunerEngine.xcodeproj */,
 				EF5641562F35FFD200EF85FE /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -114,19 +114,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EF56414F2F35FFA700EF85FE /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				EF5641532F35FFA800EF85FE /* libJDTunerEngine.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		EF5641562F35FFD200EF85FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF5641582F36009200EF85FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF56415C2F36009200EF85FE /* libJDTunerEngine.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,7 +143,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				EF5641552F35FFCC00EF85FE /* PBXTargetDependency */,
+				EF56415E2F3600CF00EF85FE /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				EF1AABF92F349EDF004ECA1C /* JDTuner */,
@@ -238,7 +238,7 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = EF56414F2F35FFA700EF85FE /* Products */;
+					ProductGroup = EF5641582F36009200EF85FE /* Products */;
 					ProjectRef = EF56414C2F35FFA700EF85FE /* JDTunerEngine.xcodeproj */;
 				},
 			);
@@ -252,11 +252,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		EF5641532F35FFA800EF85FE /* libJDTunerEngine.a */ = {
+		EF56415C2F36009200EF85FE /* libJDTunerEngine.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libJDTunerEngine.a;
-			remoteRef = EF5641522F35FFA800EF85FE /* PBXContainerItemProxy */;
+			remoteRef = EF56415B2F36009200EF85FE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -320,10 +320,10 @@
 			target = EF1AABF62F349EDF004ECA1C /* JDTuner */;
 			targetProxy = EF1AAC0F2F349EE1004ECA1C /* PBXContainerItemProxy */;
 		};
-		EF5641552F35FFCC00EF85FE /* PBXTargetDependency */ = {
+		EF56415E2F3600CF00EF85FE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "JDTunerEngine - Static Library";
-			targetProxy = EF5641542F35FFCC00EF85FE /* PBXContainerItemProxy */;
+			targetProxy = EF56415D2F3600CF00EF85FE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

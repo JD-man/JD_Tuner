@@ -3,7 +3,11 @@
 <JUCERPROJECT id="vyrg9c" name="JDTunerEngine" projectType="library" useAppConfig="0"
               addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
   <MAINGROUP id="mqI4B9" name="JDTunerEngine">
-    <GROUP id="{8FF7FC1C-4B1E-41F9-04E3-413C7F9BD137}" name="Source"/>
+    <GROUP id="{8FF7FC1C-4B1E-41F9-04E3-413C7F9BD137}" name="Source">
+      <FILE id="Drp6rV" name="JDTunerEngine.cpp" compile="1" resource="0"
+            file="Source/JDTunerEngine.cpp"/>
+      <FILE id="ejln8S" name="JDTunerEngine.h" compile="0" resource="0" file="Source/JDTunerEngine.h"/>
+    </GROUP>
   </MAINGROUP>
   <MODULES>
     <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>

@@ -17,6 +17,7 @@
 		5D79888969CABC742C528879 /* include_juce_graphics_Harfbuzz.cpp */ = {isa = PBXBuildFile; fileRef = 1C6BF0B3F8587E884EC59C3D; };
 		66E4251B0544E0023686588D /* include_juce_core_CompilationTime.cpp */ = {isa = PBXBuildFile; fileRef = EAE1F2D3CFB9BC8D4A6CADD8; };
 		8DBEFFCBFAAC5B8811A12A30 /* RecentFilesMenuTemplate.nib */ = {isa = PBXBuildFile; fileRef = 2410B4B62AB5D354D50F4DDB; };
+		9FB4241206825D572CB87CA6 /* JDTunerEngine.cpp */ = {isa = PBXBuildFile; fileRef = ED218AEF5D1EC84EE3CE5D59; };
 		BD397BFD76CEBE5981D31F4E /* Static Library */ = {isa = PBXBuildFile; fileRef = 05EF760312A3C583D4C50C48; };
 		BDC38DB0946DDB949F28826D /* include_juce_data_structures.mm */ = {isa = PBXBuildFile; fileRef = 92CBC49E9CF4128473228DAC; };
 		D2B1F289E1E9D2AA2FA19B27 /* include_juce_graphics.mm */ = {isa = PBXBuildFile; fileRef = 4A5FD3075FED86D4D4B70120; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		05EF760312A3C583D4C50C48 /* Static Library */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJDTunerEngine.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E17C91B3F136BBD2D832C64 /* JDTunerEngine.h */ /* JDTunerEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JDTunerEngine.h; path = ../../Source/JDTunerEngine.h; sourceTree = SOURCE_ROOT; };
 		1945986CB26F53679DFFC03B /* include_juce_gui_basics.mm */ /* include_juce_gui_basics.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_gui_basics.mm; path = ../../JuceLibraryCode/include_juce_gui_basics.mm; sourceTree = SOURCE_ROOT; };
 		1AC500B15024556EF9CDCB0B /* include_juce_events.mm */ /* include_juce_events.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_events.mm; path = ../../JuceLibraryCode/include_juce_events.mm; sourceTree = SOURCE_ROOT; };
 		1C6BF0B3F8587E884EC59C3D /* include_juce_graphics_Harfbuzz.cpp */ /* include_juce_graphics_Harfbuzz.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_graphics_Harfbuzz.cpp; path = ../../JuceLibraryCode/include_juce_graphics_Harfbuzz.cpp; sourceTree = SOURCE_ROOT; };
@@ -47,6 +49,7 @@
 		CED1F19F7B77AD737BDC6C2C /* include_juce_core.mm */ /* include_juce_core.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_core.mm; path = ../../JuceLibraryCode/include_juce_core.mm; sourceTree = SOURCE_ROOT; };
 		E6FD3B1A43FBF90F7FCAE897 /* include_juce_audio_devices.mm */ /* include_juce_audio_devices.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_devices.mm; path = ../../JuceLibraryCode/include_juce_audio_devices.mm; sourceTree = SOURCE_ROOT; };
 		EAE1F2D3CFB9BC8D4A6CADD8 /* include_juce_core_CompilationTime.cpp */ /* include_juce_core_CompilationTime.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_core_CompilationTime.cpp; path = ../../JuceLibraryCode/include_juce_core_CompilationTime.cpp; sourceTree = SOURCE_ROOT; };
+		ED218AEF5D1EC84EE3CE5D59 /* JDTunerEngine.cpp */ /* JDTunerEngine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = JDTunerEngine.cpp; path = ../../Source/JDTunerEngine.cpp; sourceTree = SOURCE_ROOT; };
 		F935586F7F7C184F162BD233 /* juce_graphics */ /* juce_graphics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_graphics; path = /Users/jodonghyeon/Desktop/JUCE/modules/juce_graphics; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -62,6 +65,7 @@
 		68DCFE933AE60F62DBD96ED3 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				96207724987C2BDB4A792EA6,
 				ADBE072414D93E5705646B6F,
 				F40E2FF5B52627C9801B9FA3,
 				DA89FC200B21CEDC1F9C554F,
@@ -69,6 +73,23 @@
 				18E3E329C5444350C57FACD6,
 			);
 			name = Source;
+			sourceTree = "<group>";
+		};
+		94D37FABB395EA60965F1AA3 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				ED218AEF5D1EC84EE3CE5D59,
+				0E17C91B3F136BBD2D832C64,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		96207724987C2BDB4A792EA6 /* JDTunerEngine */ = {
+			isa = PBXGroup;
+			children = (
+				94D37FABB395EA60965F1AA3,
+			);
+			name = JDTunerEngine;
 			sourceTree = "<group>";
 		};
 		ADBE072414D93E5705646B6F /* JUCE Modules */ = {
@@ -171,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FB4241206825D572CB87CA6,
 				44852D920A1C7DE91A7E709F,
 				1F1CE34AB626A2332FE213E9,
 				E099E1A7AD6DF2644EC058C4,
