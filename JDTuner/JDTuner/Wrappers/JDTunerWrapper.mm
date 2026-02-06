@@ -6,3 +6,5 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JDTunerWrapper.h"
+#import "JDTunerEngine.h"
