@@ -8,5 +8,12 @@
 #ifndef JDTunerWrapper_h
 #define JDTunerWrapper_h
 
+#import <Foundation/Foundation.h>
+
+@interface JDTunerWrapper : NSObject
+
+- (void)test;
+
+@end
 
 #endif /* JDTunerWrapper_h */
