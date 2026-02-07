@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+  
+  private let tunerWrapper = JDTunerWrapper()
+  
     var body: some View {
         VStack {
             Text("JD Tuner")
         }
         .padding()
+        .onAppear {
+          tunerWrapper.test()
+        }
     }
 }
 

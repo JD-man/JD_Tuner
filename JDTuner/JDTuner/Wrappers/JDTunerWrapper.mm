@@ -8,3 +8,11 @@
 #import <Foundation/Foundation.h>
 #import "JDTunerWrapper.h"
 #import "JDTunerEngine.h"
+
+@implementation JDTunerWrapper
+
+- (void)test {
+  printf("Test");
+}
+
+@end
