@@ -9,3 +9,16 @@
 */
 
 #include "JDTunerEngine.h"
+
+JDTunerEngine::JDTunerEngine() {
+  
+}
+
+JDTunerEngine::~JDTunerEngine() {
+  
+}
+
+int JDTunerEngine::process(int value) {
+  int newValue = value + 1;
+  return newValue;
+}
