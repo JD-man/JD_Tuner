@@ -12,7 +12,7 @@
 
 @interface JDTunerWrapper : NSObject
 
-- (void)test;
+- (int)test: (int)value;
 
 @end
 

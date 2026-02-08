@@ -10,9 +10,10 @@
 #import "JDTunerEngine.h"
 
 @implementation JDTunerWrapper
+  JDTunerEngine engine;
 
-- (void)test {
-  printf("Test");
+- (int)test: (int)value {
+  return engine.process(value);
 }
 
 @end
