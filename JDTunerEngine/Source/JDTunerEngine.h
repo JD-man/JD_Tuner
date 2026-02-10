@@ -10,3 +10,11 @@
 
 #pragma once
 #import "JuceHeader.h"
+
+class JDTunerEngine {
+  public:
+  JDTunerEngine();
+  ~JDTunerEngine();
+  
+  int process(int value);
+};
