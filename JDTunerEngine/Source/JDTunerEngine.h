@@ -26,5 +26,9 @@ class JDTunerEngine: public juce::AudioIODeviceCallback {
   void audioDeviceAboutToStart(juce::AudioIODevice *device) override;
   void audioDeviceStopped() override;
   
-  int process(int value);
+  float getValue();
+  
+  private:
+  // 튜너 알고리즘 처리 후 뷰로 보낼 값
+  float value;
 };
