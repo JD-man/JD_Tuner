@@ -10,10 +10,6 @@
 
 #include "JDTunerEngine.h"
 
-JDTunerEngine::JDTunerEngine() {
-  
-}
-
 JDTunerEngine::~JDTunerEngine() {
   
 }
