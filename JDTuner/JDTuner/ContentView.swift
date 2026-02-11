@@ -17,7 +17,7 @@ struct ContentView: View {
         }
         .padding()
         .onAppear {
-          let result = tunerWrapper.test(3)
+          let result = tunerWrapper.test()
           print(result)
         }
     }

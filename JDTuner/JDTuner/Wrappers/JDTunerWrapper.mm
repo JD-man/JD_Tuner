@@ -28,10 +28,10 @@
   return self;
 }
 
-- (int)test:(int)value {
+- (float)test {
   // 엔진 객체 생성 확인 방어코드
   if (engine) {
-    return engine->process(value);
+    return engine->getValue();
   }
   return -1;
 }
