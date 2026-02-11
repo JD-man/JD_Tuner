@@ -15,7 +15,7 @@ class JDTunerEngine: public juce::AudioIODeviceCallback {
   public:
   
   JDTunerEngine() {
-    deviceManager.initialise(1, 0, nullptr, false);
+    deviceManager.initialise(1, 0, nullptr, true);
     deviceManager.addAudioCallback(this);
   }
   
