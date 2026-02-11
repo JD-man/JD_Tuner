@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct ContentView: View {
   
@@ -17,10 +18,26 @@ struct ContentView: View {
         }
         .padding()
         .onAppear {
+          requestMicrophonePermission()
           let result = tunerWrapper.test()
           print(result)
         }
     }
+}
+
+extension ContentView {
+  func requestMicrophonePermission() {
+    AVAudioApplication.requestRecordPermission { granted in
+      DispatchQueue.main.async {
+        if granted {
+          print("마이크 권한 허용됨")
+          // 여기서 래퍼를 통해 엔진을 초기화하거나 시작할 수 있습니다.
+        } else {
+          print("마이크 권한 거부됨")
+        }
+      }
+    }
+  }
 }
 
 #Preview {
