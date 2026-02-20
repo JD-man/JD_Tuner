@@ -40,4 +40,5 @@ class JDTunerEngine: public juce::AudioIODeviceCallback {
   
   // 튜너 알고리즘 처리 후 뷰로 보낼 값
   float value;
+  float magnitudeLimit = 0.1;
 };
