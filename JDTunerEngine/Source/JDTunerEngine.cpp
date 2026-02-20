@@ -93,6 +93,21 @@ void JDTunerEngine::audioDeviceIOCallbackWithContext(const float *const *inputCh
         }
       }
     }
+    
+    // 3-4. 주파수 계산
+    // pitchTau 값은 검출한 파형의 주기에 해당한다.
+    // 샘플레이트 값을 이 값으로 나눠서 1초에 몇번 반복되는지 값인 주파수를 찾는다.
+    
+    float frequency = 0.0f;
+    if (pitchTau > 0)
+    {
+      float sampleRate = deviceManager.getAudioDeviceSetup().sampleRate;
+      frequency = sampleRate / (float)pitchTau;
+    }
+    
+    // 4. 마지막으로 이 값을 value로 전달
+    this->value = frequency;
+    juce::Logger::writeToLog(std::to_string(frequency));
   }
 }
 
