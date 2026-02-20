@@ -49,6 +49,27 @@ void JDTunerEngine::audioDeviceIOCallbackWithContext(const float *const *inputCh
         difference[tau] += diff * diff; // 제곱해서 누적
       }
     }
+    
+    /*
+     3-2. 정규화
+     difference의 맨 첫값은 자기 자신과의 차이이므로 무조건 0이다. 우선 여기를 제외하기 위해 1로 만들어 준다.
+     소리가 작을 때는 오차도 작게 나와서, 가짜 최저값에 속을 수 있다.
+     각 위치의 오차를 그전까지 나왔던 오차들의 평균값으로 나눠버립니다.
+     이렇게 하면 소리 크기와 상관없이 진짜 최저값이 어디인지 훨씬 선명하게 드러난다.
+     0~2 사이 값으로 정규화된다.
+     */
+    
+    // 1. 첫 번째 칸은 1로 고정 (자기 자신과의 차이는 무의미하므로)
+    difference[0] = 1.0f;
+
+    float runningSum = 0.0f;
+    for (int tau = 1; tau < numSamples / 2; ++tau)
+    {
+      // 지금까지의 차이값들을 계속 더함
+      runningSum += difference[tau];
+      // 현재 값을 지금까지의 차이값의 평균으로 나눠서 정규화.
+      difference[tau] = difference[tau] / (runningSum / (float)tau);
+    }
   }
 }
 
