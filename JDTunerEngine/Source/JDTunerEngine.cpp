@@ -70,6 +70,29 @@ void JDTunerEngine::audioDeviceIOCallbackWithContext(const float *const *inputCh
       // 현재 값을 지금까지의 차이값의 평균으로 나눠서 정규화.
       difference[tau] = difference[tau] / (runningSum / (float)tau);
     }
+    
+    // 3-3. 가장 낮은 값 찾기
+    
+    int pitchTau = -1; // 우리가 찾을 음정의 간격(Tau)
+    
+    for (int tau = 1; tau < numSamples / 2; ++tau)
+    {
+      // 1. 임계값보다 낮은 첫번째 지점
+      // 전체 값에서 가장 낮은 지점을 찾으면 안된다.
+      // 기타는 배음이 있기 때문에 여러 주파수가 섞여 있다.
+      // 따라서 가장 강한 소리를 내는 주파수를 찾기 위해 첫번째 값을 찾는다.
+      
+      if (difference[tau] < threshold)
+      {
+        // 2. 단순히 낮은 게 아니라, '골짜기(가장 낮은 점)'인지 확인
+        // 다음 칸이 나보다 크다면, 지금 여기가 제일 낮은 곳
+        if (tau + 1 < numSamples / 2 && difference[tau] < difference[tau + 1])
+        {
+          pitchTau = tau;
+          break;
+        }
+      }
+    }
   }
 }
 
