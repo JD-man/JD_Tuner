@@ -43,6 +43,13 @@ class JDTunerEngine: public juce::AudioIODeviceCallback {
   float magnitudeLimit = 0.1;
   float threshold = 0.1;
   
-  std::vector<float> collector; // 256개씩 들어오는 데이터를 모을 곳
+  std::vector<float> collector;
   const int collectorSize = 2048;
+  
+  void collectData(const float* datas, int numSamples);
+  std::vector<float> setDiffernce(std::vector<float>& collector);
+  std::vector<float> normalize(std::vector<float>& prevDifference);
+  int findTau(std::vector<float>& normalizedDifference);
+  float getFrequency(int pitchTau);
+  void sendFrequency(float frequency);
 };
