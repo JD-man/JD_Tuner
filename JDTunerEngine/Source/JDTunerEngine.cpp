@@ -19,33 +19,40 @@ void JDTunerEngine::audioDeviceIOCallbackWithContext(const float *const *inputCh
   // 1. 입력 데이터
   const float* inLeft = inputChannelData[0];
   
-  // 2. 입력된 소리의 볼륨 확인. 일정 이상일때만 튜너 알고리즘 실행 예정
-  float magnitude = 0.0f;
-  for (int i = 0; i < numSamples; ++i)
-      magnitude += std::abs(inLeft[i]);
+  for (int i = 0; i < numSamples; ++i) {
+    collector.push_back(inLeft[i]);
+  }
   
-  magnitude /= (float)numSamples; // 평균 볼륨
+//
+//  // 2. 입력된 소리의 볼륨 확인. 일정 이상일때만 튜너 알고리즘 실행 예정
+//  float magnitude = 0.0f;
+//  for (int i = 0; i < numSamples; ++i)
+//      magnitude += std::abs(inLeft[i]);
+//  
+//  magnitude /= (float)numSamples; // 평균 볼륨
   
   // 3. 이후 튜너 알고리즘 - YIN 알고리즘
   // 현재 소리를 복사해서 아주 살짝(tau) 옆으로 밀어낸 소리와 원본 소리의 차이를 빼서 제곱
   // 두 소리 겹치는 부분에서 차이 값이 최소가 되는데 그 간격으로 주파수를 계산
   
   // 일정 크기의 숫자 이상인 경우에만 동작
-  if (magnitude >= magnitudeLimit) {
+  if (collector.size() >= collectorSize) {
     /*
      3-1. 차이 함수
      현재 소리와 옆으로 밀어낸 소리의 차이 제곱을 difference vector에 담음
      보통 샘플의 절반까지만 밀어낸다
      */
     
-    std::vector<float> difference(numSamples / 2, 0.0f);
+    const float* collectedData = collector.data();
     
-    for (int tau = 0; tau < numSamples / 2; ++tau)
+    std::vector<float> difference(collectorSize / 2, 0.0f);
+    
+    for (int tau = 0; tau < collectorSize / 2; ++tau)
     {
-      for (int i = 0; i < numSamples / 2; ++i)
+      for (int i = 0; i < collectorSize / 2; ++i)
       {
         // 현재 샘플과 tau만큼 떨어진 샘플의 차이를 구함
-        float diff = inLeft[i] - inLeft[i + tau];
+        float diff = collectedData[i] - collectedData[i + tau];
         difference[tau] += diff * diff; // 제곱해서 누적
       }
     }
@@ -63,7 +70,7 @@ void JDTunerEngine::audioDeviceIOCallbackWithContext(const float *const *inputCh
     difference[0] = 1.0f;
 
     float runningSum = 0.0f;
-    for (int tau = 1; tau < numSamples / 2; ++tau)
+    for (int tau = 1; tau < collectorSize / 2; ++tau)
     {
       // 지금까지의 차이값들을 계속 더함
       runningSum += difference[tau];
@@ -75,7 +82,7 @@ void JDTunerEngine::audioDeviceIOCallbackWithContext(const float *const *inputCh
     
     int pitchTau = -1; // 우리가 찾을 음정의 간격(Tau)
     
-    for (int tau = 1; tau < numSamples / 2; ++tau)
+    for (int tau = 1; tau < collectorSize / 2; ++tau)
     {
       // 1. 임계값보다 낮은 첫번째 지점
       // 전체 값에서 가장 낮은 지점을 찾으면 안된다.
@@ -86,7 +93,7 @@ void JDTunerEngine::audioDeviceIOCallbackWithContext(const float *const *inputCh
       {
         // 2. 단순히 낮은 게 아니라, '골짜기(가장 낮은 점)'인지 확인
         // 다음 칸이 나보다 크다면, 지금 여기가 제일 낮은 곳
-        if (tau + 1 < numSamples / 2 && difference[tau] < difference[tau + 1])
+        if (tau + 1 < collectorSize / 2 && difference[tau] < difference[tau + 1])
         {
           pitchTau = tau;
           break;
@@ -107,6 +114,10 @@ void JDTunerEngine::audioDeviceIOCallbackWithContext(const float *const *inputCh
     
     // 4. 마지막으로 이 값을 value로 전달
     this->value = frequency;
+    
+    collector.erase(collector.begin(), collector.begin() + numSamples);
+    if (collector.size() > 4096) collector.clear();
+    
     juce::Logger::writeToLog(std::to_string(frequency));
   }
 }
