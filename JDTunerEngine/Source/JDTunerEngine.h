@@ -40,4 +40,16 @@ class JDTunerEngine: public juce::AudioIODeviceCallback {
   
   // 튜너 알고리즘 처리 후 뷰로 보낼 값
   float value;
+  float magnitudeLimit = 0.1;
+  float threshold = 0.1;
+  
+  std::vector<float> collector;
+  const int collectorSize = 2048;
+  
+  void collectData(const float* datas, int numSamples);
+  std::vector<float> setDiffernce(std::vector<float>& collector);
+  std::vector<float> normalize(std::vector<float>& prevDifference);
+  int findTau(std::vector<float>& normalizedDifference);
+  float getFrequency(int pitchTau);
+  void sendFrequency(float frequency);
 };

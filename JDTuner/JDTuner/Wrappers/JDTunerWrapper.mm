@@ -28,7 +28,7 @@
   return self;
 }
 
-- (float)test {
+- (float)getValue {
   // 엔진 객체 생성 확인 방어코드
   if (engine) {
     return engine->getValue();
