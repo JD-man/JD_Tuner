@@ -23,6 +23,7 @@
   // 인스턴스 초기화 확인 방어코드
   if (self) {
     // 엔진 객체를 생성합니다.
+    static juce::ScopedJuceInitialiser_GUI guiInitialiser;
     engine = std::make_unique<JDTunerEngine>();
   }
   return self;

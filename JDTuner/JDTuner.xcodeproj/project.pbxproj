@@ -12,7 +12,6 @@
 		EF5641632F36015400EF85FE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5641622F36015400EF85FE /* AudioToolbox.framework */; };
 		EF5641652F36015D00EF85FE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5641642F36015D00EF85FE /* AVFoundation.framework */; };
 		EF5641672F36016400EF85FE /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5641662F36016400EF85FE /* CoreAudio.framework */; };
-		EF5641692F36016800EF85FE /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5641682F36016800EF85FE /* CoreMIDI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,7 +80,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF5641692F36016800EF85FE /* CoreMIDI.framework in Frameworks */,
 				EF5641672F36016400EF85FE /* CoreAudio.framework in Frameworks */,
 				EF5641652F36015D00EF85FE /* AVFoundation.framework in Frameworks */,
 				EF5641632F36015400EF85FE /* AudioToolbox.framework in Frameworks */,
