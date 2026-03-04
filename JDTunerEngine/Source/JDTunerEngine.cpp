@@ -30,6 +30,7 @@ void JDTunerEngine::audioDeviceIOCallbackWithContext(const float *const *inputCh
     auto frequency = getFrequency(pitchTau);
     auto result = getGuitarTunerResult(frequency);
     this->result = result;
+    collector.clear();
   }
 }
 
@@ -156,8 +157,6 @@ TunerResult JDTunerEngine::getGuitarTunerResult(float frequency) {
   // 3. 선택된 줄의 주파수를 기준으로 Cents 계산
   float targetFreq = guitarStrings[closestString];
   float cents = 1200.0f * log2f(frequency / targetFreq);
-  
-  collector.clear();
   return { frequency, guitarNoteNames[closestString], cents };
 }
 
