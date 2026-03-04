@@ -15,16 +15,21 @@ struct ContentView: View {
   
   let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
   @State
-  var value: Float = 0.0
+  var frequency: Float = 0.0
+  @State
+  var note: String = ""
+  @State
+  var cents: Float = 0.0
   
     var body: some View {
         VStack {
-            Text("\(value)")
+            Text("\(frequency)Hz, \(note)note, \(cents)cents")
         }
         .padding()
         .onReceive(timer, perform: { _ in
-          let value = tunerWrapper.getValue()
-          self.value = value
+          frequency = tunerWrapper.getFrequency()
+          note = tunerWrapper.getNoteName()
+          cents = tunerWrapper.getCents()
         })
         .onAppear {
           requestMicrophonePermission()
