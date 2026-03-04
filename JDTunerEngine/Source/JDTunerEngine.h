@@ -11,6 +11,12 @@
 #pragma once
 #import "JuceHeader.h"
 
+struct TunerResult {
+  float frequency;
+  const char* noteName;
+  float cents;
+};
+
 class JDTunerEngine: public juce::AudioIODeviceCallback {
   public:
   
@@ -32,14 +38,14 @@ class JDTunerEngine: public juce::AudioIODeviceCallback {
   void audioDeviceAboutToStart(juce::AudioIODevice *device) override;
   void audioDeviceStopped() override;
   
-  float getValue();
+  TunerResult getResult();
   
   private:
   // 콜백 추가를 위한 AudioDeviceManager
   juce::AudioDeviceManager deviceManager;
   
   // 튜너 알고리즘 처리 후 뷰로 보낼 값
-  float value;
+  TunerResult result;
   float magnitudeLimit = 0.1;
   float threshold = 0.1;
   
@@ -51,5 +57,5 @@ class JDTunerEngine: public juce::AudioIODeviceCallback {
   std::vector<float> normalize(std::vector<float>& prevDifference);
   int findTau(std::vector<float>& normalizedDifference);
   float getFrequency(int pitchTau);
-  void sendFrequency(float frequency);
+  TunerResult getGuitarTunerResult(float frequency);
 };
