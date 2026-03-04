@@ -1,12 +1,12 @@
 /*
-  ==============================================================================
-
-    JDTunerEngine.cpp
-    Created: 5 Feb 2026 8:04:47pm
-    Author:  조동현
-
-  ==============================================================================
-*/
+ ==============================================================================
+ 
+ JDTunerEngine.cpp
+ Created: 5 Feb 2026 8:04:47pm
+ Author:  조동현
+ 
+ ==============================================================================
+ */
 
 #include "JDTunerEngine.h"
 
@@ -28,7 +28,8 @@ void JDTunerEngine::audioDeviceIOCallbackWithContext(const float *const *inputCh
     auto normalizedDifference = normalize(prevDifference);
     auto pitchTau = findTau(normalizedDifference);
     auto frequency = getFrequency(pitchTau);
-    sendFrequency(frequency);
+    auto result = getGuitarTunerResult(frequency);
+    this->result = result;
   }
 }
 
@@ -132,14 +133,34 @@ float JDTunerEngine::getFrequency(int pitchTau) {
   return frequency;
 }
 
-// 3. 마지막으로 이 값을 value로 전달
-void JDTunerEngine::sendFrequency(float frequency) {
+// 3. cents 및 목표 노트 계산 후 반환
+TunerResult JDTunerEngine::getGuitarTunerResult(float frequency) {
+  if (frequency < 40.0f || frequency > 500.0f) return { frequency, "---", 0.0f };
   
-  this->value = frequency;
+  // 1. 기타 6줄의 표준 주파수 배열
+  float guitarStrings[] = { 82.41f, 110.00f, 146.83f, 196.00f, 246.94f, 329.63f };
+  const char* guitarNoteNames[] = { "6E", "5A", "4D", "3G", "2B", "1E" };
+  
+  // 2. 현재 주파수와 가장 가까운 줄 찾기
+  int closestString = 0;
+  float minDifference = fabs(frequency - guitarStrings[0]);
+  
+  for (int i = 1; i < 6; ++i) {
+    float diff = fabs(frequency - guitarStrings[i]);
+    if (diff < minDifference) {
+      minDifference = diff;
+      closestString = i;
+    }
+  }
+  
+  // 3. 선택된 줄의 주파수를 기준으로 Cents 계산
+  float targetFreq = guitarStrings[closestString];
+  float cents = 1200.0f * log2f(frequency / targetFreq);
+  
   collector.clear();
-  juce::Logger::writeToLog(std::to_string(frequency));
+  return { frequency, guitarNoteNames[closestString], cents };
 }
 
-float JDTunerEngine::getValue() {
-  return value;
+TunerResult JDTunerEngine::getResult() {
+  return result;
 }
