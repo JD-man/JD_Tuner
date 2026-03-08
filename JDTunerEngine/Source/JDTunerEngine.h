@@ -13,7 +13,7 @@
 
 struct TunerResult {
   float frequency;
-  const char* noteName;
+  std::string noteName;
   float cents;
 };
 
