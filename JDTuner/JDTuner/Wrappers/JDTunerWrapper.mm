@@ -29,12 +29,17 @@
   return self;
 }
 
-- (float)getValue {
-  // 엔진 객체 생성 확인 방어코드
-  if (engine) {
-    return engine->getValue();
-  }
-  return -1;
+- (float)getFrequency {
+    return engine->getResult().frequency;
+}
+
+- (NSString *)getNoteName {
+    TunerResult res = engine->getResult();
+    return [NSString stringWithUTF8String:res.noteName];
+}
+
+- (float)getCents {
+    return engine->getResult().cents;
 }
 
 @end

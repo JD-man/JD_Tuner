@@ -12,7 +12,9 @@
 // 캡슐화를 위해 swift에 공개되는 코드만 여기에 작성한다.
 @interface JDTunerWrapper : NSObject
 
-- (float)getValue ;
+- (float)getFrequency;
+- (NSString *)getNoteName;
+- (float)getCents;
 
 @end
 
