@@ -102,12 +102,29 @@ struct TunerView: View {
       }
       .padding(.top, 50)
     }
+    .onAppear {
+      requestMicrophonePermission()
+    }
     .onReceive(timer) { _ in
       let currentCents = wrapper.getCents()
       self.cents = currentCents
       self.noteName = wrapper.getNoteName()
       self.frequency = wrapper.getFrequency()
       self.isMatched = abs(currentCents) <= centsLimit
+    }
+  }
+}
+
+extension TunerView {
+  func requestMicrophonePermission() {
+    AVAudioApplication.requestRecordPermission { granted in
+      DispatchQueue.main.async {
+        if granted {
+          print("마이크 권한 허용됨")
+        } else {
+          print("마이크 권한 거부됨")
+        }
+      }
     }
   }
 }
