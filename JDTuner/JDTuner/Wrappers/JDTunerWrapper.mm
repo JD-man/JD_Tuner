@@ -35,7 +35,7 @@
 
 - (NSString *)getNoteName {
     TunerResult res = engine->getResult();
-    return [NSString stringWithUTF8String:res.noteName];
+    return [NSString stringWithUTF8String:res.noteName.c_str()];
 }
 
 - (float)getCents {
