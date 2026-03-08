@@ -106,7 +106,7 @@ struct TunerView: View {
       requestMicrophonePermission()
     }
     .onReceive(timer) { _ in
-      let currentCents = wrapper.getCents()
+      let currentCents = max(-50, min(50, wrapper.getCents()))
       self.cents = currentCents
       self.noteName = wrapper.getNoteName()
       self.frequency = wrapper.getFrequency()
