@@ -25,21 +25,23 @@
     // 엔진 객체를 생성합니다.
     static juce::ScopedJuceInitialiser_GUI guiInitialiser;
     engine = std::make_unique<JDTunerEngine>();
+    _centsLimit = 5.0;
   }
   return self;
 }
 
-- (float)getFrequency {
-    return engine->getResult().frequency;
-}
-
-- (NSString *)getNoteName {
-    TunerResult res = engine->getResult();
-    return [NSString stringWithUTF8String:res.noteName.c_str()];
-}
-
-- (float)getCents {
-    return engine->getResult().cents;
+- (WrapperResult *)getTunerResult {
+  auto engineResult = engine->getResult();
+  auto cents = fmaxf(-50.0f, fminf(50.0f, engineResult.cents));
+  
+  // new 사용해서 초기화하는 코드를 사용해야함
+  WrapperResult *result = [WrapperResult new];
+  
+  result.frequency = engineResult.frequency;
+  result.cents = engineResult.cents;
+  result.noteName = [NSString stringWithUTF8String:engineResult.noteName.c_str()];
+  result.isMatched = std::abs(cents) <= _centsLimit;
+  return result;
 }
 
 @end
