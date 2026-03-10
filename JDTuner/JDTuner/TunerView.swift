@@ -14,8 +14,6 @@ import SwiftUI
 struct TunerView: View {
   @State
   private var result: WrapperResult = .init()
-  
-  private let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
   private let wrapper = JDTunerWrapper()
   
   var body: some View {
@@ -101,9 +99,11 @@ struct TunerView: View {
     .onAppear {
       requestMicrophonePermission()
     }
-    .onReceive(timer) { _ in
-      guard let wrapperResult = wrapper.getTunerResult() else { return }
-      result = wrapperResult
+    .task {
+      // wrapper의 asyncstream 사용
+      for await newResult in wrapper.resultsStream {
+        self.result = newResult
+      }
     }
   }
 }
