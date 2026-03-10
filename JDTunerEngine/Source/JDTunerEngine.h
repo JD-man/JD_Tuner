@@ -27,6 +27,8 @@ class JDTunerEngine: public juce::AudioIODeviceCallback {
   
   ~JDTunerEngine();
   
+  // 결과값을 wrapper로 전달하는 콜백
+  std::function<void(TunerResult)> onResultReady;
   
   // AudioIODeviceCallback를 상속하면 아래의 3개 메서드는 필수 구현
   // abstract class .. 에러가 나오면 해당 클래스의 상위 클래스에 가서

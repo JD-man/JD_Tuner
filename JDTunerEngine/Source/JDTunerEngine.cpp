@@ -31,6 +31,11 @@ void JDTunerEngine::audioDeviceIOCallbackWithContext(const float *const *inputCh
     auto result = getGuitarTunerResult(frequency);
     this->result = result;
     collector.clear();
+    
+    // 데이터 처리가 완료되면 등록된 콜백 실행
+    if (onResultReady) {
+      onResultReady(result);
+    }
   }
 }
 
