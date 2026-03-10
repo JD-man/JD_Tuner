@@ -26,22 +26,31 @@
     static juce::ScopedJuceInitialiser_GUI guiInitialiser;
     engine = std::make_unique<JDTunerEngine>();
     _centsLimit = 5.0;
+    
+    // 튜너쪽 콜백 정의
+    __weak typeof(self) weakSelf = self;
+    engine->onResultReady = [weakSelf](TunerResult tunerResult) {
+      [weakSelf getTunerResult:tunerResult];
+    };
   }
   return self;
 }
 
-- (WrapperResult *)getTunerResult {
-  auto engineResult = engine->getResult();
-  auto cents = fmaxf(-50.0f, fminf(50.0f, engineResult.cents));
-  
-  // new 사용해서 초기화하는 코드를 사용해야함
+- (void)getTunerResult: (TunerResult) tunerResult {
   WrapperResult *result = [WrapperResult new];
+  result.frequency = tunerResult.frequency;
   
-  result.frequency = engineResult.frequency;
-  result.cents = engineResult.cents;
-  result.noteName = [NSString stringWithUTF8String:engineResult.noteName.c_str()];
-  result.isMatched = std::abs(cents) <= _centsLimit;
-  return result;
+  float clampedCents = fmaxf(-50.0f, fminf(50.0f, tunerResult.cents));
+  result.cents = clampedCents;
+  result.noteName = [NSString stringWithUTF8String:tunerResult.noteName.c_str()];
+  result.isMatched = std::abs(clampedCents) <= _centsLimit;
+  
+  // 튜너로 값을 받아 뷰로 넘긴다
+  if (_onResultUpdate) {
+    dispatch_async(dispatch_get_main_queue(), ^{
+      self->_onResultUpdate(result);
+    });
+  }
 }
 
 @end

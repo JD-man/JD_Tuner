@@ -16,7 +16,8 @@
 
 @property (nonatomic, assign) float centsLimit;
 
-- (WrapperResult *)getTunerResult;
+// 앱으로 result를 전달하는 콜백
+@property (nonatomic, copy) void (^onResultUpdate)(WrapperResult *result);
 
 @end
 
