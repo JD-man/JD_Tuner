@@ -103,7 +103,7 @@ std::vector<float> JDTunerEngine::normalize(std::vector<float>& prevDifference) 
 
 // 2-3. 가장 낮은 값 찾기
 int JDTunerEngine::findTau(std::vector<float>& normalizedDifference) {
-  int pitchTau = -1; // 우리가 찾을 음정의 간격(Tau)
+  float pitchTau = -1.0f; // 우리가 찾을 음정의 간격(Tau)
   
   for (int tau = 1; tau < collectorSize / 2; ++tau)
   {
@@ -118,8 +118,18 @@ int JDTunerEngine::findTau(std::vector<float>& normalizedDifference) {
       // 다음 칸이 나보다 크다면, 지금 여기가 제일 낮은 곳
       if (tau + 1 < collectorSize / 2 && normalizedDifference[tau] < normalizedDifference[tau + 1])
       {
-        pitchTau = tau;
-        break;
+        // 3. Parabolic Interpolation
+        if (tau > 0 && tau < (collectorSize / 2) - 1) {
+          float alpha = normalizedDifference[tau - 1];
+          float beta  = normalizedDifference[tau];
+          float gamma = normalizedDifference[tau + 1];
+          
+          float denominator = alpha - 2.0f * beta + gamma;
+          if (denominator != 0.0f) {
+            pitchTau = tau + 0.5f * (alpha - gamma) / denominator;
+            break;
+          }
+        }
       }
     }
   }
