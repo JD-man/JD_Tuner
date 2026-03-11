@@ -50,7 +50,10 @@ void JDTunerEngine::audioDeviceAboutToStart(juce::AudioIODevice *device) {
 // 1. 입력 데이터 모으기
 void JDTunerEngine::collectData(const float* datas, int numSamples) {
   for (int i = 0; i < numSamples; ++i) {
-    collector.push_back(datas[i]);
+    // 로우패스 필터 적용
+    float filteredSample = lpfAlpha * datas[i] + (1.0f - lpfAlpha) * prevLpfOut;
+    prevLpfOut = filteredSample;
+    collector.push_back(filteredSample);
   }
 }
 
