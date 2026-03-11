@@ -9,12 +9,15 @@
 #define JDTunerWrapper_h
 
 #import <Foundation/Foundation.h>
+#import "WrapperResult.h"
+
 // 캡슐화를 위해 swift에 공개되는 코드만 여기에 작성한다.
 @interface JDTunerWrapper : NSObject
 
-- (float)getFrequency;
-- (NSString *)getNoteName;
-- (float)getCents;
+@property (nonatomic, assign) float centsLimit;
+
+// 앱으로 result를 전달하는 콜백
+@property (nonatomic, copy) void (^onResultUpdate)(WrapperResult *result);
 
 @end
 

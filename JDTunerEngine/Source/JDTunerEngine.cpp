@@ -31,6 +31,11 @@ void JDTunerEngine::audioDeviceIOCallbackWithContext(const float *const *inputCh
     auto result = getGuitarTunerResult(frequency);
     this->result = result;
     collector.clear();
+    
+    // 데이터 처리가 완료되면 등록된 콜백 실행
+    if (onResultReady) {
+      onResultReady(result);
+    }
   }
 }
 
@@ -136,7 +141,7 @@ float JDTunerEngine::getFrequency(int pitchTau) {
 
 // 3. cents 및 목표 노트 계산 후 반환
 TunerResult JDTunerEngine::getGuitarTunerResult(float frequency) {
-  if (frequency < 40.0f || frequency > 500.0f) return { frequency, "---", 0.0f };
+  if (frequency < 40.0f || frequency > 500.0f) return { result };
   
   // 1. 기타 6줄의 표준 주파수 배열
   float guitarStrings[] = { 82.41f, 110.00f, 146.83f, 196.00f, 246.94f, 329.63f };
