@@ -100,9 +100,13 @@ struct TunerView: View {
       requestMicrophonePermission()
     }
     .task {
-      // wrapper의 asyncstream 사용
+      // asyncstream 사용 및 실제 값 변경때만 상태값 변경
+      var lastResult: WrapperResult? = nil
       for await newResult in wrapper.resultsStream {
-        self.result = newResult
+          if newResult != lastResult {
+              self.result = newResult
+              lastResult = newResult
+          }
       }
     }
   }
