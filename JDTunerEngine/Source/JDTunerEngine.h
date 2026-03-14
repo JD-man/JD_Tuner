@@ -51,6 +51,10 @@ class JDTunerEngine: public juce::AudioIODeviceCallback {
   float magnitudeLimit = 0.1;
   float threshold = 0.1;
   
+  // 로우패스 필터용 변수
+  float prevLpfOut = 0.0f; // 필터의 이전 출력값을 기억
+  float lpfAlpha = 0.2f;   // 필터 강도 (0.0~1.0, 작을수록 고음을 더 강하게 깎음)
+  
   std::vector<float> collector;
   const int collectorSize = 2048;
   
