@@ -74,7 +74,7 @@ struct TunerView: View {
             .shadow(color: .white, radius: 3)
             .shadow(color: .white.opacity(0.5), radius: 10)
             .offset(y: -(Constants.mainTrackSize / 2))
-            .rotationEffect(.degrees(Double(result.cents) * 2.2))
+            .rotationEffect(.degrees(Double(result.cents) * 3.0))
             .animation(.interactiveSpring(response: 0.2, dampingFraction: 0.7), value: result.cents)
         }
         
@@ -97,8 +97,8 @@ struct TunerView: View {
 extension TunerView {
   private enum Constants {
     // UI 디자인 상수
-    static let gaugeSpan: Double = 110.0 // 게이지 범위 (양옆 110도)
-    static let inTuneSpan: Double = 8.0  // 정음 구간 범위 (양옆 8도)
+    static let gaugeSpan: Double = 150.0 // 게이지 범위
+    static let inTuneSpan: Double = 15.0  // 정음 구간 범위
     
     // 트랙 크기
     static let mainTrackSize: CGFloat = 280.0
