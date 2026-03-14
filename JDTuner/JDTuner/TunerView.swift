@@ -30,13 +30,11 @@ struct TunerView: View {
         
         ZStack {
           
-          // ✨ [수정됨] 1. 바깥쪽 메탈릭 아치 트랙 (Outer Track)
+          // 바깥쪽 메탈릭 원형 트랙
           ZStack {
             // 1-1. 베이스 컬러 그라데이션 트랙 + 입체 그림자
             GaugeArc(startAngle: .degrees(-Constants.gaugeSpan), endAngle: .degrees(Constants.gaugeSpan))
               .stroke(metallicGradient, style: StrokeStyle(lineWidth: Constants.outerTrackWidth, lineCap: .round))
-            // 트랙 자체가 배경에서 떠있는 듯한 묵직한 그림자
-              .shadow(color: Color.black.opacity(0.6), radius: 2, x: 2, y: 2)
             
             // 1-2. 메탈 질감 하이라이트 (상단 빛 반사 효과)
             GaugeArc(startAngle: .degrees(-Constants.gaugeSpan), endAngle: .degrees(Constants.gaugeSpan))
@@ -50,12 +48,11 @@ struct TunerView: View {
           .frame(width: Constants.outerTrackSize, height: Constants.outerTrackSize)
           
           
-          // ✨ [수정됨] 2. 안쪽 메탈릭 원형 트랙 (Inner Track)
+          // 안쪽 메탈릭 원형 트랙
           ZStack {
             // 2-1. 베이스 컬러 그라데이션 원 + 입체 그림자
             Circle()
-              .stroke(metallicGradient, lineWidth: Constants.innerTrackWidth)
-              .shadow(color: Color.black.opacity(0.6), radius: 2, x: 1, y: 2)
+              .stroke(innerMetallicGradient, lineWidth: Constants.innerTrackWidth)
             
             // 2-2. 메탈 질감 베젤 효과 (좌측 상단 하이라이트, 우측 하단 쉐도우)
             Circle()
@@ -64,7 +61,7 @@ struct TunerView: View {
                   gradient: Gradient(stops: [
                     .init(color: Color.white.opacity(0.7), location: 0.1), // 빛 받는 부분
                     .init(color: Color.white.opacity(0.1), location: 0.5),
-                    .init(color: Color.black.opacity(0.4), location: 0.9)  // 그림자 지는 부분
+                    .init(color: Color.gray.opacity(0.4), location: 0.9)  // 그림자 지는 부분
                   ]),
                   startPoint: .topLeading,
                   endPoint: .bottomTrailing
@@ -141,8 +138,8 @@ extension TunerView {
     static let innerTrackSize: CGFloat = 230.0 // 메인보다 40 작음
     
     static let mainLineWidth: CGFloat = 20.0
-    static let innerTrackWidth: CGFloat = 1.5 // 안팎 트랙의 얇은 두께
-    static let outerTrackWidth: CGFloat = 1.0 // 안팎 트랙의 얇은 두께
+    static let innerTrackWidth: CGFloat = 2.0 // 안팎 트랙의 얇은 두께
+    static let outerTrackWidth: CGFloat = 1.5 // 안팎 트랙의 얇은 두께
     static let indicatorSize: CGFloat = 14.0
     
     // 컬러 팔레트
@@ -179,5 +176,22 @@ extension TunerView {
   // 12시 방향이 초록색이 되도록 -90도 회전시킴
   private var metallicGradient: AngularGradient {
     AngularGradient(gradient: Gradient(colors: [Constants.flatColor, Constants.tuneColor, Constants.sharpColor]), center: .center, angle: .degrees(90))
+  }
+  
+  private var innerMetallicGradient: AngularGradient {
+    AngularGradient(
+      gradient: Gradient(stops: [
+        .init(color: .gray, location: 0.0),
+        .init(color: .gray, location: 0.1),
+        .init(color: Constants.flatColor, location: 0.3),
+        .init(color: Constants.tuneColor, location: 0.5),
+        .init(color: Constants.sharpColor, location: 0.7),
+        .init(color: .gray, location: 0.9),
+        .init(color: .gray, location: 1.0)
+      ]),
+      center: .center,
+      startAngle: .degrees(90),
+      endAngle: .degrees(450)
+    )
   }
 }
