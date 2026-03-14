@@ -30,15 +30,50 @@ struct TunerView: View {
         
         ZStack {
           
-          // 바깥쪽 얇은 보조 트랙
-          GaugeArc(startAngle: .degrees(-Constants.gaugeSpan), endAngle: .degrees(Constants.gaugeSpan))
-            .stroke(Color.white.opacity(0.15), style: StrokeStyle(lineWidth: Constants.subLineWidth, lineCap: .round))
-            .frame(width: Constants.outerTrackSize, height: Constants.outerTrackSize)
+          // ✨ [수정됨] 1. 바깥쪽 메탈릭 아치 트랙 (Outer Track)
+          ZStack {
+            // 1-1. 베이스 컬러 그라데이션 트랙 + 입체 그림자
+            GaugeArc(startAngle: .degrees(-Constants.gaugeSpan), endAngle: .degrees(Constants.gaugeSpan))
+              .stroke(metallicGradient, style: StrokeStyle(lineWidth: Constants.outerTrackWidth, lineCap: .round))
+            // 트랙 자체가 배경에서 떠있는 듯한 묵직한 그림자
+              .shadow(color: Color.black.opacity(0.6), radius: 2, x: 2, y: 2)
+            
+            // 1-2. 메탈 질감 하이라이트 (상단 빛 반사 효과)
+            GaugeArc(startAngle: .degrees(-Constants.gaugeSpan), endAngle: .degrees(Constants.gaugeSpan))
+              .stroke(
+                LinearGradient(colors: [.white.opacity(0.4), .clear, .black.opacity(0.3)], startPoint: .top, endPoint: .bottom),
+                style: StrokeStyle(lineWidth: Constants.outerTrackWidth, lineCap: .round)
+              )
+              .blendMode(.overlay) // 색상 위에 자연스럽게 섞이도록
+          }
+          .opacity(0.3)
+          .frame(width: Constants.outerTrackSize, height: Constants.outerTrackSize)
           
-          // 안쪽 얇은 보조 트랙
-          GaugeArc(startAngle: .degrees(-Constants.gaugeSpan), endAngle: .degrees(Constants.gaugeSpan))
-            .stroke(Color.white.opacity(0.15), style: StrokeStyle(lineWidth: Constants.subLineWidth, lineCap: .round))
-            .frame(width: Constants.innerTrackSize, height: Constants.innerTrackSize)
+          
+          // ✨ [수정됨] 2. 안쪽 메탈릭 원형 트랙 (Inner Track)
+          ZStack {
+            // 2-1. 베이스 컬러 그라데이션 원 + 입체 그림자
+            Circle()
+              .stroke(metallicGradient, lineWidth: Constants.innerTrackWidth)
+              .shadow(color: Color.black.opacity(0.6), radius: 2, x: 1, y: 2)
+            
+            // 2-2. 메탈 질감 베젤 효과 (좌측 상단 하이라이트, 우측 하단 쉐도우)
+            Circle()
+              .strokeBorder( // strokeBorder를 써야 원 안쪽에 테두리가 생김
+                LinearGradient(
+                  gradient: Gradient(stops: [
+                    .init(color: Color.white.opacity(0.7), location: 0.1), // 빛 받는 부분
+                    .init(color: Color.white.opacity(0.1), location: 0.5),
+                    .init(color: Color.black.opacity(0.4), location: 0.9)  // 그림자 지는 부분
+                  ]),
+                  startPoint: .topLeading,
+                  endPoint: .bottomTrailing
+                ),
+                lineWidth: 2 // 얇은 베젤 선
+              )
+          }
+          .opacity(0.5)
+          .frame(width: Constants.innerTrackSize, height: Constants.innerTrackSize)
           
           // 3. 메인 3분할 컬러 트랙 (가운데)
           Group {
@@ -102,11 +137,12 @@ extension TunerView {
     
     // 트랙 크기
     static let mainTrackSize: CGFloat = 280.0
-    static let outerTrackSize: CGFloat = 320.0 // 메인보다 40 큼
-    static let innerTrackSize: CGFloat = 240.0 // 메인보다 40 작음
+    static let outerTrackSize: CGFloat = 330.0 // 메인보다 40 큼
+    static let innerTrackSize: CGFloat = 230.0 // 메인보다 40 작음
     
     static let mainLineWidth: CGFloat = 20.0
-    static let subLineWidth: CGFloat = 1.5 // 안팎 트랙의 얇은 두께
+    static let innerTrackWidth: CGFloat = 1.5 // 안팎 트랙의 얇은 두께
+    static let outerTrackWidth: CGFloat = 1.0 // 안팎 트랙의 얇은 두께
     static let indicatorSize: CGFloat = 14.0
     
     // 컬러 팔레트
@@ -138,5 +174,10 @@ extension TunerView {
       return String(name.dropFirst())
     }
     return name
+  }
+  
+  // 12시 방향이 초록색이 되도록 -90도 회전시킴
+  private var metallicGradient: AngularGradient {
+    AngularGradient(gradient: Gradient(colors: [Constants.flatColor, Constants.tuneColor, Constants.sharpColor]), center: .center, angle: .degrees(90))
   }
 }
