@@ -108,6 +108,7 @@ struct TunerView: View {
             .offset(y: -(Constants.mainTrackSize / 2))
             .rotationEffect(.degrees(Double(result.cents) * 3.0))
             .animation(.interactiveSpring(response: 0.2, dampingFraction: 0.7), value: result.cents)
+            .zIndex(1)
         }
         
         .frame(width: Constants.outerTrackSize, height: Constants.outerTrackSize)
