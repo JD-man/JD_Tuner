@@ -110,8 +110,39 @@ struct TunerView: View {
             .animation(.interactiveSpring(response: 0.2, dampingFraction: 0.7), value: result.cents)
             .zIndex(1)
         }
-        
         .frame(width: Constants.outerTrackSize, height: Constants.outerTrackSize)
+        
+#if DEBUG
+        VStack(spacing: 15) {
+          
+          // Slider 값과 result.cents를 강제로 연결(Binding)
+          Slider(value: Binding(
+            get: { Double(result.cents) },
+            set: { newValue in
+              let dummyResult = WrapperResult()
+              dummyResult.cents = Float(newValue)
+              dummyResult.isMatched = abs(newValue) <= Double(wrapper.centsLimit)
+              dummyResult.noteName = "E"
+              self.result = dummyResult
+            }
+          ), in: -50...50)
+          .tint(result.isMatched ? .green : .blue)
+          
+          Text(String(format: "현재 Cents: %+.1f", result.cents))
+            .font(.system(.body, design: .monospaced))
+            .foregroundColor(.white.opacity(0.8))
+          
+        }
+        .padding()
+        .background(Color.black.opacity(0.85))
+        .cornerRadius(16)
+        .overlay(
+          RoundedRectangle(cornerRadius: 16)
+            .stroke(Color.white.opacity(0.2), lineWidth: 1)
+        )
+        .padding(.horizontal, 20)
+        .padding(.bottom, 30)
+#endif
         
         Spacer()
       }
