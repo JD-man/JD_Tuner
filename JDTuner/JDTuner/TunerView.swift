@@ -19,8 +19,8 @@ struct TunerView: View {
       // 배경: 미세한 방사형 그라데이션
       RadialGradient(
         gradient: Gradient(colors: [Constants.bgColor.opacity(0.8), Constants.bgColor]),
-        center: .center,
-        startRadius: 50,
+        center: .top,
+        startRadius: 30,
         endRadius: 400
       )
       .ignoresSafeArea()
