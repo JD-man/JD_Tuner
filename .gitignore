@@ -69,3 +69,4 @@ JUCE/modules/
 
 ## 튜너 빌드 파일
 *.a
+**/Core
