@@ -10,12 +10,7 @@
 
 #pragma once
 #import "JuceHeader.h"
-
-struct TunerResult {
-  float frequency;
-  std::string noteName;
-  float cents;
-};
+#import "Core/JDTuner.h"
 
 class JDTunerEngine: public juce::AudioIODeviceCallback {
   public:
@@ -40,28 +35,11 @@ class JDTunerEngine: public juce::AudioIODeviceCallback {
   void audioDeviceAboutToStart(juce::AudioIODevice *device) override;
   void audioDeviceStopped() override;
   
-  TunerResult getResult();
   
   private:
+  JDTuner jdTuner;
+  
   // 콜백 추가를 위한 AudioDeviceManager
   juce::AudioDeviceManager deviceManager;
   
-  // 튜너 알고리즘 처리 후 뷰로 보낼 값
-  TunerResult result;
-  float magnitudeLimit = 0.1;
-  float threshold = 0.1;
-  
-  // 로우패스 필터용 변수
-  float prevLpfOut = 0.0f; // 필터의 이전 출력값을 기억
-  float lpfAlpha = 0.2f;   // 필터 강도 (0.0~1.0, 작을수록 고음을 더 강하게 깎음)
-  
-  std::vector<float> collector;
-  const int collectorSize = 2048;
-  
-  void collectData(const float* datas, int numSamples);
-  std::vector<float> setDiffernce(std::vector<float>& collector);
-  std::vector<float> normalize(std::vector<float>& prevDifference);
-  int findTau(std::vector<float>& normalizedDifference);
-  float getFrequency(int pitchTau);
-  TunerResult getGuitarTunerResult(float frequency);
 };
