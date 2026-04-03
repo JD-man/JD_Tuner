@@ -4,6 +4,10 @@
               addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
   <MAINGROUP id="mqI4B9" name="JDTunerEngine">
     <GROUP id="{8FF7FC1C-4B1E-41F9-04E3-413C7F9BD137}" name="Source">
+      <GROUP id="{5DDF0EE0-70C5-FDEA-FFA0-B792D388EA70}" name="Core">
+        <FILE id="ExgTzk" name="JDTuner.cpp" compile="1" resource="0" file="Source/Core/JDTuner.cpp"/>
+        <FILE id="CTgdNR" name="JDTuner.h" compile="0" resource="0" file="Source/Core/JDTuner.h"/>
+      </GROUP>
       <FILE id="Drp6rV" name="JDTunerEngine.cpp" compile="1" resource="0"
             file="Source/JDTunerEngine.cpp"/>
       <FILE id="ejln8S" name="JDTunerEngine.h" compile="0" resource="0" file="Source/JDTunerEngine.h"/>
