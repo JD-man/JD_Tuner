@@ -10,7 +10,7 @@
 
 #pragma once
 #import "JuceHeader.h"
-#import "Core/JDTuner.h"
+#import "JDTuner.h"
 
 class JDTunerEngine: public juce::AudioIODeviceCallback {
   public:

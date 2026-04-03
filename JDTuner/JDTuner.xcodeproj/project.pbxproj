@@ -487,6 +487,7 @@
 					"\"$(SRCROOT)/../JDTunerEngine/JuceLibraryCode\"",
 					"\"$(SRCROOT)/../JDTunerEngine/Source\"",
 					"\"$(SRCROOT)/../../../../Desktop/JUCE/modules\"",
+					"\"$(SRCROOT)/../../JD_DSP/Tuner\"",
 				);
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "입력된 소리의 주파수 계산을 위해 마이크를 통한 소리의 입력이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -531,6 +532,7 @@
 					"\"$(SRCROOT)/../JDTunerEngine/JuceLibraryCode\"",
 					"\"$(SRCROOT)/../JDTunerEngine/Source\"",
 					"\"$(SRCROOT)/../../../../Desktop/JUCE/modules\"",
+					"\"$(SRCROOT)/../../JD_DSP/Tuner\"",
 				);
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "입력된 소리의 주파수 계산을 위해 마이크를 통한 소리의 입력이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
