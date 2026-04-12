@@ -35,6 +35,7 @@ class JDTunerEngine: public juce::AudioIODeviceCallback {
   void audioDeviceAboutToStart(juce::AudioIODevice *device) override;
   void audioDeviceStopped() override;
   
+  float centsLimit = 5.0;
   
   private:
   JDTuner jdTuner;
@@ -47,5 +48,4 @@ class JDTunerEngine: public juce::AudioIODeviceCallback {
   float smootedLimit = 20.0;
   
   void smoothFrequency(float currentFrequency);
-  
 };

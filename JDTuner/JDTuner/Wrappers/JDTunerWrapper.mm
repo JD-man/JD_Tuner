@@ -25,7 +25,7 @@
     // 엔진 객체를 생성합니다.
     static juce::ScopedJuceInitialiser_GUI guiInitialiser;
     engine = std::make_unique<JDTunerEngine>();
-    _centsLimit = 5.0;
+    _centsLimit = engine->centsLimit;
     
     // 튜너쪽 콜백 정의
     __weak typeof(self) weakSelf = self;
@@ -40,10 +40,9 @@
   WrapperResult *result = [WrapperResult new];
   
   result.frequency = tunerResult.frequency;
-  float clampedCents = fmaxf(-50.0f, fminf(50.0f, tunerResult.cents));
-  result.cents = clampedCents;
+  result.cents = tunerResult.cents;
   result.noteName = [NSString stringWithUTF8String:tunerResult.noteName.c_str()];
-  result.isMatched = std::abs(clampedCents) <= _centsLimit;
+  result.isMatched = tunerResult.isMatched;
   
   // 튜너로 값을 받아 뷰로 넘긴다
   if (_onResultUpdate) {

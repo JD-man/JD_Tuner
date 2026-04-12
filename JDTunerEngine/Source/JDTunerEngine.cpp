@@ -22,6 +22,11 @@ void JDTunerEngine::audioDeviceIOCallbackWithContext(const float *const *inputCh
       auto result = jdTuner.getResult();
       smoothFrequency(result.frequency);
       result.frequency = smoothedFrequency;
+      
+      float clampedCents = fmaxf(-50.0f, fminf(50.0f, result.cents));
+      result.cents = clampedCents;
+      result.isMatched = std::abs(clampedCents) <= centsLimit;
+      
       onResultReady(result);
     }
   } else {
