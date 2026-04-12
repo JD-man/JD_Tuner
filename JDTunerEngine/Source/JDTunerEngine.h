@@ -42,4 +42,10 @@ class JDTunerEngine: public juce::AudioIODeviceCallback {
   // 콜백 추가를 위한 AudioDeviceManager
   juce::AudioDeviceManager deviceManager;
   
+  float smoothedFrequency = 0.0;
+  float smoothedRate = 0.8;
+  float smootedLimit = 20.0;
+  
+  void smoothFrequency(float currentFrequency);
+  
 };
