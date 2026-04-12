@@ -12,6 +12,7 @@
 		1F1CE34AB626A2332FE213E9 /* include_juce_audio_devices.mm */ = {isa = PBXBuildFile; fileRef = E6FD3B1A43FBF90F7FCAE897; };
 		2DFF9565D0D16992063F1DAA /* include_juce_core.mm */ = {isa = PBXBuildFile; fileRef = CED1F19F7B77AD737BDC6C2C; };
 		30230682E6C827C3712EA731 /* include_juce_graphics_Sheenbidi.c */ = {isa = PBXBuildFile; fileRef = 56F98E3A24C7D1E83471938B; };
+		3AC26F1C239D154D3A9E634E /* JDTuner.cpp */ = {isa = PBXBuildFile; fileRef = F0DD4B56E60EEE4CEB312F40; };
 		44852D920A1C7DE91A7E709F /* include_juce_audio_basics.mm */ = {isa = PBXBuildFile; fileRef = C8FBFE18264C86BAD38D0601; };
 		5419604094E1E0957B1F0D9B /* include_juce_dsp.mm */ = {isa = PBXBuildFile; fileRef = 1E6ABD365493E238ABA618D2; };
 		5D79888969CABC742C528879 /* include_juce_graphics_Harfbuzz.cpp */ = {isa = PBXBuildFile; fileRef = 1C6BF0B3F8587E884EC59C3D; };
@@ -38,6 +39,7 @@
 		56F98E3A24C7D1E83471938B /* include_juce_graphics_Sheenbidi.c */ /* include_juce_graphics_Sheenbidi.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = include_juce_graphics_Sheenbidi.c; path = ../../JuceLibraryCode/include_juce_graphics_Sheenbidi.c; sourceTree = SOURCE_ROOT; };
 		5720416FFAE217D47C79127E /* include_juce_audio_formats.mm */ /* include_juce_audio_formats.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_formats.mm; path = ../../JuceLibraryCode/include_juce_audio_formats.mm; sourceTree = SOURCE_ROOT; };
 		61C39CF97EACAA56ECAAC06D /* juce_core */ /* juce_core */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_core; path = /Users/jodonghyeon/Desktop/JUCE/modules/juce_core; sourceTree = "<absolute>"; };
+		770D4BF78A504E4F6AB827AC /* JDTuner.h */ /* JDTuner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JDTuner.h; path = ../../../../JD_DSP/Tuner/JDTuner.h; sourceTree = SOURCE_ROOT; };
 		92CBC49E9CF4128473228DAC /* include_juce_data_structures.mm */ /* include_juce_data_structures.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_data_structures.mm; path = ../../JuceLibraryCode/include_juce_data_structures.mm; sourceTree = SOURCE_ROOT; };
 		94400E0BAC6F2861340BB9F8 /* JuceHeader.h */ /* JuceHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JuceHeader.h; path = ../../JuceLibraryCode/JuceHeader.h; sourceTree = SOURCE_ROOT; };
 		AE0CD0878B5BF8EF8E710473 /* juce_audio_formats */ /* juce_audio_formats */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_formats; path = /Users/jodonghyeon/Desktop/JUCE/modules/juce_audio_formats; sourceTree = "<absolute>"; };
@@ -50,6 +52,7 @@
 		E6FD3B1A43FBF90F7FCAE897 /* include_juce_audio_devices.mm */ /* include_juce_audio_devices.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_devices.mm; path = ../../JuceLibraryCode/include_juce_audio_devices.mm; sourceTree = SOURCE_ROOT; };
 		EAE1F2D3CFB9BC8D4A6CADD8 /* include_juce_core_CompilationTime.cpp */ /* include_juce_core_CompilationTime.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_core_CompilationTime.cpp; path = ../../JuceLibraryCode/include_juce_core_CompilationTime.cpp; sourceTree = SOURCE_ROOT; };
 		ED218AEF5D1EC84EE3CE5D59 /* JDTunerEngine.cpp */ /* JDTunerEngine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = JDTunerEngine.cpp; path = ../../Source/JDTunerEngine.cpp; sourceTree = SOURCE_ROOT; };
+		F0DD4B56E60EEE4CEB312F40 /* JDTuner.cpp */ /* JDTuner.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = JDTuner.cpp; path = ../../../../JD_DSP/Tuner/JDTuner.cpp; sourceTree = SOURCE_ROOT; };
 		F935586F7F7C184F162BD233 /* juce_graphics */ /* juce_graphics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_graphics; path = /Users/jodonghyeon/Desktop/JUCE/modules/juce_graphics; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -60,6 +63,15 @@
 				05EF760312A3C583D4C50C48,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		2787BFEF891956BBC353BF4B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F0DD4B56E60EEE4CEB312F40,
+				770D4BF78A504E4F6AB827AC,
+			);
+			name = Core;
 			sourceTree = "<group>";
 		};
 		68DCFE933AE60F62DBD96ED3 /* Source */ = {
@@ -78,6 +90,7 @@
 		94D37FABB395EA60965F1AA3 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				2787BFEF891956BBC353BF4B,
 				ED218AEF5D1EC84EE3CE5D59,
 				0E17C91B3F136BBD2D832C64,
 			);
@@ -192,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AC26F1C239D154D3A9E634E,
 				9FB4241206825D572CB87CA6,
 				44852D920A1C7DE91A7E709F,
 				1F1CE34AB626A2332FE213E9,
@@ -305,10 +319,11 @@
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/../../JuceLibraryCode",
 					"/Users/jodonghyeon/Desktop/JUCE/modules",
+					"$(SRCROOT)/../../../../JD_DSP/Tuner",
 					"$(inherited)",
 				);
 				LLVM_LTO = YES;
-				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode /Users/jodonghyeon/Desktop/JUCE/modules";
+				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode /Users/jodonghyeon/Desktop/JUCE/modules $(SRCROOT)/../../../../JD_DSP/Tuner";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.JDTunerEngine;
 				PRODUCT_NAME = "JDTunerEngine";
 				USE_HEADERMAP = NO;
@@ -360,9 +375,10 @@
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/../../JuceLibraryCode",
 					"/Users/jodonghyeon/Desktop/JUCE/modules",
+					"$(SRCROOT)/../../../../JD_DSP/Tuner",
 					"$(inherited)",
 				);
-				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode /Users/jodonghyeon/Desktop/JUCE/modules";
+				MTL_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../JuceLibraryCode /Users/jodonghyeon/Desktop/JUCE/modules $(SRCROOT)/../../../../JD_DSP/Tuner";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.JDTunerEngine;
 				PRODUCT_NAME = "JDTunerEngine";
 				USE_HEADERMAP = NO;
