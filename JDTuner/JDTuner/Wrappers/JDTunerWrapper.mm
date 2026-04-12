@@ -52,4 +52,11 @@
   }
 }
 
+- (void)setTuningMode:(NSString *)modeName {
+  if (engine) {
+    std::string cppModeName = [modeName UTF8String];
+    engine->setTuningMode(cppModeName);
+  }
+}
+
 @end

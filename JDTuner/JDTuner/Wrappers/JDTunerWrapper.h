@@ -19,6 +19,8 @@
 // 앱으로 result를 전달하는 콜백
 @property (nonatomic, copy) void (^onResultUpdate)(WrapperResult *result);
 
+- (void)setTuningMode:(NSString *)modeName;
+
 @end
 
 #endif /* JDTunerWrapper_h */
