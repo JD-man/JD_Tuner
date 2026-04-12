@@ -57,3 +57,7 @@ void JDTunerEngine::smoothFrequency(float currentFrequency) {
     smoothedFrequency = 0.0f;
   }
 }
+
+void JDTunerEngine::setTuningMode(const std::string &modeName) {
+  jdTuner.setTuningMode(modeName);
+}

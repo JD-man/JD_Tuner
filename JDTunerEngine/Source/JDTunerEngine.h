@@ -37,6 +37,8 @@ class JDTunerEngine: public juce::AudioIODeviceCallback {
   
   float centsLimit = 5.0;
   
+  void setTuningMode(const std::string& modeName);
+  
   private:
   JDTuner jdTuner;
   
