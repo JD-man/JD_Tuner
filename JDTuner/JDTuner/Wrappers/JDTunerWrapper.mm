@@ -25,7 +25,7 @@
     // 엔진 객체를 생성합니다.
     static juce::ScopedJuceInitialiser_GUI guiInitialiser;
     engine = std::make_unique<JDTunerEngine>();
-    _centsLimit = engine->centsLimit;
+    _centsLimit = engine->getCentsLimit();
     
     // 튜너쪽 콜백 정의
     __weak typeof(self) weakSelf = self;
@@ -49,6 +49,13 @@
     dispatch_async(dispatch_get_main_queue(), ^{
       self->_onResultUpdate(result);
     });
+  }
+}
+
+- (void)setTuningMode:(NSString *)modeName {
+  if (engine) {
+    std::string cppModeName = [modeName UTF8String];
+    engine->setTuningMode(cppModeName);
   }
 }
 

@@ -35,17 +35,12 @@ class JDTunerEngine: public juce::AudioIODeviceCallback {
   void audioDeviceAboutToStart(juce::AudioIODevice *device) override;
   void audioDeviceStopped() override;
   
-  float centsLimit = 5.0;
+  void setTuningMode(const std::string& modeName);
+  float getCentsLimit();
   
   private:
-  JDTuner jdTuner;
+  JDTuner jdTuner {20.0, 0.8, 5.0};
   
   // 콜백 추가를 위한 AudioDeviceManager
   juce::AudioDeviceManager deviceManager;
-  
-  float smoothedFrequency = 0.0;
-  float smoothedRate = 0.8;
-  float smootedLimit = 20.0;
-  
-  void smoothFrequency(float currentFrequency);
 };
