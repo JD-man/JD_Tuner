@@ -12,6 +12,7 @@ import AVFoundation
 // MARK: - 3. 메인 뷰
 struct TunerView: View {
   @State private var result: WrapperResult = WrapperResult()
+  @State private var selectedMode: TuningMode = .guitarStandard
   private let wrapper = JDTunerWrapper()
   
   var body: some View {
@@ -112,6 +113,32 @@ struct TunerView: View {
         }
         .frame(width: Constants.outerTrackSize, height: Constants.outerTrackSize)
         
+        HStack {
+          Text("Tuning Mode")
+            .font(.headline)
+            .foregroundColor(.white.opacity(0.6))
+          
+          Spacer()
+          
+          Picker("Tuning Mode", selection: $selectedMode) {
+            ForEach(TuningMode.allCases, id: \.self) { mode in
+              Text(mode.displayName).tag(mode)
+            }
+          }
+          .pickerStyle(.menu)
+          .tint(.white)
+          .lineLimit(1)
+          .fixedSize(horizontal: true, vertical: false)
+          // 값이 변경될 때마다 C++ Wrapper로 전달
+          .onChange(of: selectedMode, initial: false, { oldValue, newValue in
+            if oldValue != newValue {
+              wrapper.setTuningMode(newValue.rawValue)
+            }
+          })
+        }
+        .padding(.horizontal, 24)
+        .padding(.top, 20)
+        
 #if DEBUG
         VStack(spacing: 15) {
           
@@ -149,6 +176,7 @@ struct TunerView: View {
     }
     .task {
       requestMicrophonePermission()
+      wrapper.setTuningMode(selectedMode.rawValue)
       for await newResult in wrapper.resultsStream {
         if result != newResult {
           self.result = newResult
