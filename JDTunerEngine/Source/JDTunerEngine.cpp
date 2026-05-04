@@ -19,6 +19,7 @@ void JDTunerEngine::audioDeviceIOCallbackWithContext(const float *const *inputCh
     if (onResultReady) {
       auto result = jdTuner.getResult();
       onResultReady(result);
+      jdTuner.isReady = false;
     }
   } else {
     float sampleRate = deviceManager.getAudioDeviceSetup().sampleRate;
