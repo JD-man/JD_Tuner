@@ -1,0 +1,684 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EF56415F2F3600D500EF85FE /* libJDTunerEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF56415C2F36009200EF85FE /* libJDTunerEngine.a */; };
+		EF5641612F36013B00EF85FE /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5641602F36013B00EF85FE /* Accelerate.framework */; };
+		EF5641632F36015400EF85FE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5641622F36015400EF85FE /* AudioToolbox.framework */; };
+		EF5641652F36015D00EF85FE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5641642F36015D00EF85FE /* AVFoundation.framework */; };
+		EF5641672F36016400EF85FE /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5641662F36016400EF85FE /* CoreAudio.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EF1AAC052F349EE1004ECA1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF1AABEF2F349EDF004ECA1C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF1AABF62F349EDF004ECA1C;
+			remoteInfo = JDTuner;
+		};
+		EF1AAC0F2F349EE1004ECA1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF1AABEF2F349EDF004ECA1C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF1AABF62F349EDF004ECA1C;
+			remoteInfo = JDTuner;
+		};
+		EF56415B2F36009200EF85FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF56414C2F35FFA700EF85FE /* JDTunerEngine.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 05EF760312A3C583D4C50C48;
+			remoteInfo = "JDTunerEngine - Static Library";
+		};
+		EF56415D2F3600CF00EF85FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF56414C2F35FFA700EF85FE /* JDTunerEngine.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2847CAE5C44058D0E01012D6;
+			remoteInfo = "JDTunerEngine - Static Library";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EF1AABF72F349EDF004ECA1C /* JDTuner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JDTuner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF1AAC042F349EE1004ECA1C /* JDTunerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JDTunerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF1AAC0E2F349EE1004ECA1C /* JDTunerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JDTunerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF56414C2F35FFA700EF85FE /* JDTunerEngine.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JDTunerEngine.xcodeproj; path = ../JDTunerEngine/Builds/iOS/JDTunerEngine.xcodeproj; sourceTree = SOURCE_ROOT; };
+		EF5641602F36013B00EF85FE /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		EF5641622F36015400EF85FE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		EF5641642F36015D00EF85FE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		EF5641662F36016400EF85FE /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		EF5641682F36016800EF85FE /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		EF1AABF92F349EDF004ECA1C /* JDTuner */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = JDTuner;
+			sourceTree = "<group>";
+		};
+		EF1AAC072F349EE1004ECA1C /* JDTunerTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = JDTunerTests;
+			sourceTree = "<group>";
+		};
+		EF1AAC112F349EE1004ECA1C /* JDTunerUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = JDTunerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF1AABF42F349EDF004ECA1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF5641672F36016400EF85FE /* CoreAudio.framework in Frameworks */,
+				EF5641652F36015D00EF85FE /* AVFoundation.framework in Frameworks */,
+				EF5641632F36015400EF85FE /* AudioToolbox.framework in Frameworks */,
+				EF5641612F36013B00EF85FE /* Accelerate.framework in Frameworks */,
+				EF56415F2F3600D500EF85FE /* libJDTunerEngine.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF1AAC012F349EE1004ECA1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF1AAC0B2F349EE1004ECA1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EF1AABEE2F349EDF004ECA1C = {
+			isa = PBXGroup;
+			children = (
+				EF56414C2F35FFA700EF85FE /* JDTunerEngine.xcodeproj */,
+				EF1AABF92F349EDF004ECA1C /* JDTuner */,
+				EF1AAC072F349EE1004ECA1C /* JDTunerTests */,
+				EF1AAC112F349EE1004ECA1C /* JDTunerUITests */,
+				EF1AABF82F349EDF004ECA1C /* Products */,
+				EF5641562F35FFD200EF85FE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EF1AABF82F349EDF004ECA1C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF1AABF72F349EDF004ECA1C /* JDTuner.app */,
+				EF1AAC042F349EE1004ECA1C /* JDTunerTests.xctest */,
+				EF1AAC0E2F349EE1004ECA1C /* JDTunerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF5641562F35FFD200EF85FE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF5641682F36016800EF85FE /* CoreMIDI.framework */,
+				EF5641662F36016400EF85FE /* CoreAudio.framework */,
+				EF5641642F36015D00EF85FE /* AVFoundation.framework */,
+				EF5641622F36015400EF85FE /* AudioToolbox.framework */,
+				EF5641602F36013B00EF85FE /* Accelerate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF5641582F36009200EF85FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF56415C2F36009200EF85FE /* libJDTunerEngine.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EF1AABF62F349EDF004ECA1C /* JDTuner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF1AAC182F349EE1004ECA1C /* Build configuration list for PBXNativeTarget "JDTuner" */;
+			buildPhases = (
+				EF1AABF32F349EDF004ECA1C /* Sources */,
+				EF1AABF42F349EDF004ECA1C /* Frameworks */,
+				EF1AABF52F349EDF004ECA1C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF56415E2F3600CF00EF85FE /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				EF1AABF92F349EDF004ECA1C /* JDTuner */,
+			);
+			name = JDTuner;
+			packageProductDependencies = (
+			);
+			productName = JDTuner;
+			productReference = EF1AABF72F349EDF004ECA1C /* JDTuner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EF1AAC032F349EE1004ECA1C /* JDTunerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF1AAC1B2F349EE1004ECA1C /* Build configuration list for PBXNativeTarget "JDTunerTests" */;
+			buildPhases = (
+				EF1AAC002F349EE1004ECA1C /* Sources */,
+				EF1AAC012F349EE1004ECA1C /* Frameworks */,
+				EF1AAC022F349EE1004ECA1C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF1AAC062F349EE1004ECA1C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				EF1AAC072F349EE1004ECA1C /* JDTunerTests */,
+			);
+			name = JDTunerTests;
+			packageProductDependencies = (
+			);
+			productName = JDTunerTests;
+			productReference = EF1AAC042F349EE1004ECA1C /* JDTunerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EF1AAC0D2F349EE1004ECA1C /* JDTunerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF1AAC1E2F349EE1004ECA1C /* Build configuration list for PBXNativeTarget "JDTunerUITests" */;
+			buildPhases = (
+				EF1AAC0A2F349EE1004ECA1C /* Sources */,
+				EF1AAC0B2F349EE1004ECA1C /* Frameworks */,
+				EF1AAC0C2F349EE1004ECA1C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF1AAC102F349EE1004ECA1C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				EF1AAC112F349EE1004ECA1C /* JDTunerUITests */,
+			);
+			name = JDTunerUITests;
+			packageProductDependencies = (
+			);
+			productName = JDTunerUITests;
+			productReference = EF1AAC0E2F349EE1004ECA1C /* JDTunerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF1AABEF2F349EDF004ECA1C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2620;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					EF1AABF62F349EDF004ECA1C = {
+						CreatedOnToolsVersion = 26.2;
+						LastSwiftMigration = 2620;
+					};
+					EF1AAC032F349EE1004ECA1C = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = EF1AABF62F349EDF004ECA1C;
+					};
+					EF1AAC0D2F349EE1004ECA1C = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = EF1AABF62F349EDF004ECA1C;
+					};
+				};
+			};
+			buildConfigurationList = EF1AABF22F349EDF004ECA1C /* Build configuration list for PBXProject "JDTuner" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EF1AABEE2F349EDF004ECA1C;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = EF1AABF82F349EDF004ECA1C /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = EF5641582F36009200EF85FE /* Products */;
+					ProjectRef = EF56414C2F35FFA700EF85FE /* JDTunerEngine.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				EF1AABF62F349EDF004ECA1C /* JDTuner */,
+				EF1AAC032F349EE1004ECA1C /* JDTunerTests */,
+				EF1AAC0D2F349EE1004ECA1C /* JDTunerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		EF56415C2F36009200EF85FE /* libJDTunerEngine.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libJDTunerEngine.a;
+			remoteRef = EF56415B2F36009200EF85FE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF1AABF52F349EDF004ECA1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF1AAC022F349EE1004ECA1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF1AAC0C2F349EE1004ECA1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF1AABF32F349EDF004ECA1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF1AAC002F349EE1004ECA1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF1AAC0A2F349EE1004ECA1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EF1AAC062F349EE1004ECA1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF1AABF62F349EDF004ECA1C /* JDTuner */;
+			targetProxy = EF1AAC052F349EE1004ECA1C /* PBXContainerItemProxy */;
+		};
+		EF1AAC102F349EE1004ECA1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF1AABF62F349EDF004ECA1C /* JDTuner */;
+			targetProxy = EF1AAC0F2F349EE1004ECA1C /* PBXContainerItemProxy */;
+		};
+		EF56415E2F3600CF00EF85FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "JDTunerEngine - Static Library";
+			targetProxy = EF56415D2F3600CF00EF85FE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EF1AAC162F349EE1004ECA1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EF1AAC172F349EE1004ECA1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EF1AAC192F349EE1004ECA1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z2SX2S8N8L;
+				ENABLE_PREVIEWS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"JUCE_GLOBAL_MODULE_SETTINGS_INCLUDED=1",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../JDTunerEngine/JuceLibraryCode\"",
+					"\"$(SRCROOT)/../JDTunerEngine/Source\"",
+					"\"$(SRCROOT)/../../../../Desktop/JUCE/modules\"",
+					"\"$(SRCROOT)/../../JD_DSP/Tuner\"",
+				);
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "입력된 소리의 주파수 계산을 위해 마이크를 통한 소리의 입력이 필요합니다.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JDman.JDTuner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "JDTuner/Wrappers/JDTuner-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EF1AAC1A2F349EE1004ECA1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z2SX2S8N8L;
+				ENABLE_PREVIEWS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "JUCE_GLOBAL_MODULE_SETTINGS_INCLUDED=1";
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../JDTunerEngine/JuceLibraryCode\"",
+					"\"$(SRCROOT)/../JDTunerEngine/Source\"",
+					"\"$(SRCROOT)/../../../../Desktop/JUCE/modules\"",
+					"\"$(SRCROOT)/../../JD_DSP/Tuner\"",
+				);
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "입력된 소리의 주파수 계산을 위해 마이크를 통한 소리의 입력이 필요합니다.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JDman.JDTuner;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "JDTuner/Wrappers/JDTuner-Bridging-Header.h";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EF1AAC1C2F349EE1004ECA1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JDTunerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JDTuner.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/JDTuner";
+			};
+			name = Debug;
+		};
+		EF1AAC1D2F349EE1004ECA1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JDTunerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JDTuner.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/JDTuner";
+			};
+			name = Release;
+		};
+		EF1AAC1F2F349EE1004ECA1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JDTunerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JDTuner;
+			};
+			name = Debug;
+		};
+		EF1AAC202F349EE1004ECA1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JDTunerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JDTuner;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EF1AABF22F349EDF004ECA1C /* Build configuration list for PBXProject "JDTuner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF1AAC162F349EE1004ECA1C /* Debug */,
+				EF1AAC172F349EE1004ECA1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF1AAC182F349EE1004ECA1C /* Build configuration list for PBXNativeTarget "JDTuner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF1AAC192F349EE1004ECA1C /* Debug */,
+				EF1AAC1A2F349EE1004ECA1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF1AAC1B2F349EE1004ECA1C /* Build configuration list for PBXNativeTarget "JDTunerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF1AAC1C2F349EE1004ECA1C /* Debug */,
+				EF1AAC1D2F349EE1004ECA1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF1AAC1E2F349EE1004ECA1C /* Build configuration list for PBXNativeTarget "JDTunerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF1AAC1F2F349EE1004ECA1C /* Debug */,
+				EF1AAC202F349EE1004ECA1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EF1AABEF2F349EDF004ECA1C /* Project object */;
+}
