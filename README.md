@@ -8,11 +8,13 @@
 ------------------------------------------------------------  
 
 # 📹 실행 영상
-준비중
 
-<!-- <p align="center">
-<img src="YOUR_IMAGE_URL_HERE" width="250">
-</p> -->
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=bxciA4DR3jc" target="_blank">
+    <img src="https://img.youtube.com/vi/bxciA4DR3jc/maxresdefault.jpg" alt="JDTunerDemo" width="80%" />
+  </a>
+</div>  
+
 
 ------------------------------------------------------------  
 
@@ -66,4 +68,5 @@
 ---------------------------------------------------
 
 # 🚀 Getting Started
-실행방법 : 없음 ㅎ
+실행방법 : 없음 ㅎ   
+환율 및 친구비 이슈로 출시 포기.
